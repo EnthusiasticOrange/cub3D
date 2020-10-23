@@ -1,0 +1,13 @@
+R 1024 768
+NO ./textures/bluestone.xpm
+SO ./textures/greystone.xpm
+WE ./textures/redbrick.xpm
+EA ./textures/wood.xpm
+S  ./textures/barrel.xpm
+F  113, 113, 113
+C  56, 56, 56
+111111
+100101
+102001
+1100N1
+111111
