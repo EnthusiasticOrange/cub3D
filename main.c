@@ -6,7 +6,7 @@
 /*   By: mjuli <mjuli@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 10:50:09 by mjuli             #+#    #+#             */
-/*   Updated: 2020/10/22 19:10:17 by mjuli            ###   ########.fr       */
+/*   Updated: 2020/10/23 17:34:44 by mjuli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static int	start(t_cub3d_state *state)
 	mlx_expose_hook(state->win, draw_hook, state);
 	mlx_key_hook(state->win, key_hook, state);
 	mlx_hook(state->win, X11DESTROY, 0, clear_cub3d_state, state);
+	draw_hook(state);
 	return (mlx_loop(state->mlx));
 }
 
