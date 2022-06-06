@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mjuli <mjuli@student.21-school.ru>         +#+  +:+       +#+         #
+#    By: alexey <alexey@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/18 15:05:45 by mjuli             #+#    #+#              #
-#    Updated: 2020/10/23 17:40:08 by mjuli            ###   ########.fr        #
+#    Updated: 2022/06/07 01:00:14 by alexey           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = cub3D
 FLAGS = -Wall -Wextra -Werror
 LIBFT = -I libft -L libft -lft
-MLX = -I mlx -L mlx -lmlx -lm
+MLX = -I mlx -L mlx -lmlx -lm -framework OpenGL -framework AppKit
 SRC = gnl/get_next_line.c gnl/get_next_line_utils.c \
 	process_file.c process_elements.c process_map.c check_map.c \
 	player.c visible_sprites.c dda.c draw_wall.c draw_sprites.c draw.c \
@@ -30,7 +30,7 @@ $(NAME): $(OBJ)
 	cd mlx && make
 	cd libft && make
 	gcc $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(MLX)
-	cp mlx/libmlx.dylib .
+	cp mlx/libmlx.a .
 
 clean:
 	cd mlx && make clean
@@ -39,7 +39,7 @@ clean:
 
 fclean: clean
 	cd libft && make fclean
-	rm -f libmlx.dylib
+	rm -f libmlx.a
 	rm -f $(NAME)
 
 bonus: $(NAME)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjuli <mjuli@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: alexey <alexey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 20:32:43 by mjuli             #+#    #+#             */
-/*   Updated: 2020/10/22 19:15:20 by mjuli            ###   ########.fr       */
+/*   Updated: 2022/06/07 00:58:56 by alexey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static int	init_screen_img(t_cub3d_state *state)
 	int sizex;
 	int sizey;
 
-	mlx_get_screen_size(state->mlx, &sizex, &sizey);
+	// mlx_get_screen_size(state->mlx, &sizex, &sizey);
+	sizex = 1920; sizey = 1080;
 	state->cfg.w = state->cfg.w > sizex ? sizex : state->cfg.w;
 	state->cfg.h = state->cfg.h > sizey ? sizey : state->cfg.h;
 	if (!(state->img = mlx_new_image(state->mlx, state->cfg.w, state->cfg.h)))
